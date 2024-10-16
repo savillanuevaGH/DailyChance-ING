@@ -1,0 +1,31 @@
+@import url("https://api.fontshare.com/v2/css?f[]=author@200,300,400,401,500,600,700,1&display=swap");
+
+:root {
+    --primary-color: #0B4C41;
+    --primary-color-dark: #032620;
+    --primary-color-light: #258273;
+    --secondary-color: #E9D700;
+    --secondary-color-dark: #DAB600;
+    --secondary-color-light: #F8ED62;
+    --complement-color: #2CCAAF;
+    --complement-color-light: #8AF1DF;
+}
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Author', sans-serif;
+    font-size: 1.25rem;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

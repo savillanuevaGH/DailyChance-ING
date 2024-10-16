@@ -1,0 +1,121 @@
+@import url('style.css');
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--secondary-color-light) 1%, var(--primary-color-dark) 99%);
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: #2c5e1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f4e425;
+    font-size: 24px;
+    border: 2px solid #f4e425;
+}
+
+.app-name {
+    font-size: 2rem;
+    color: var(--secondary-color-dark);
+    font-weight: bold;
+    text-shadow: 0 0 2px black;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--primary-color-dark);
+    margin: 2rem 0;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.numbers-grid {
+    background: var(--secondary-color-light);
+    border: 2px solid var(--secondary-color-dark);
+    border-radius: 15px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.number-circle {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c5e1a;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    margin: auto;
+}
+
+.my-numbers {
+    background: var(--primary-color-light);
+    border: 1px solid var(--primary-color-dark);
+    border-radius: 15px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.generate-btn {
+    background: var(--secondary-color-light);
+    color: var(--primary-color-dark);
+    border: 1px solid var(--primary-color-dark);
+    padding: 10px 24px;
+    border-radius: 25px;
+    color: var(--primary-color-dark);
+    font-size: .8em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+@keyframes numberPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.number-animation {
+    animation: numberPop 0.5s ease-out;
+}

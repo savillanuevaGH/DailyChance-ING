@@ -14,10 +14,10 @@
                 <h1>Bienvenido</h1>
                 <p class="subtitle">Inicia sesión</p>
                 <div class="input-group">
-                    <input type="email" placeholder="example@gmail.com" required>
-                    <input type="password" placeholder="Contraseña" required>
+                    <input id="user-email" type="email" placeholder="example@gmail.com" required>
+                    <input id="user-psswrd" type="password" placeholder="Contraseña" required>
                 </div>
-                <button onclick="login()">Iniciar Sesión</button>
+                <button onclick="logIn()">Iniciar Sesión</button>
                 <p class="toggle-form">¿No tienes cuenta? <span onclick="toggleForms()">Registrate</span></p>
             </div>
     
@@ -34,6 +34,6 @@
                 <p class="toggle-form">¿Ya tienes cuenta? <span onclick="toggleForms()">Iniciar sesión</span></p>
             </div>
         </div>
-    <script src="bienvenido.js"></script>
+    <script src="../controlador/bienvenido.js"></script>
 </body>
 </html>

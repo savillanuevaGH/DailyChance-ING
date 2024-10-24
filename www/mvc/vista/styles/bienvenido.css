@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
-    background: linear-gradient(180deg, #f4e425 0%, #76b852 100%);
+    background: linear-gradient(180deg, var(--secondary-color-light) 0%, var(--primary-color) 100%);
 }
 
 .container {
@@ -15,7 +15,7 @@ body {
 }
 
 .form-container {
-    background: linear-gradient(180deg, #f4e425 0%, #2c5e1a 100%);
+    background: linear-gradient(180deg, var(--secondary-color-light) 0%, var(--primary-color-dark) 100%);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -24,14 +24,14 @@ body {
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
+    margin-bottom: .5rem;
+    color: var(--primary-color);
 }
 
 .subtitle {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #1a1a1a;
+    color: var(--primary-color);
     font-style: italic;
 }
 
@@ -41,25 +41,26 @@ h1 {
 
 input {
     width: 100%;
-    padding: 0.8rem;
+    padding: .6rem .9rem;
     border: none;
     border-radius: 25px;
     background: rgba(255, 255, 255, 0.9);
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: .9em;
 }
 
 input::placeholder {
     color: #666;
+    line-height: 1.2;
 }
 
 button {
     width: 100%;
-    padding: 0.8rem;
+    padding: .5rem .8rem;
     border: none;
     border-radius: 25px;
-    background: #f4e425;
-    color: #1a1a1a;
+    background: var(--secondary-color);
+    color: var(--primary-color-dark);
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -67,21 +68,29 @@ button {
 }
 
 button:hover {
-    background: #e6d620;
+    background: var(--secondary-color-dark);
 }
 
 .toggle-form {
     text-align: center;
-    color: #1a1a1a;
+    color: var(--primary-color-dark);
+    text-shadow: 1px 1px 5px rgba(44, 202, 175, .4),
+                -1px -1px 5px rgba(44, 202, 175, .4);
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: .9rem;
 }
 
 .toggle-form span {
-    color: #f4e425;
+    color: var(--secondary-color);
     text-decoration: underline;
+    text-decoration-color: var(--secondary-color-dark);
+    text-shadow: none;
 }
 
 #registerForm {
     display: none;
+}
+
+#registerForm h1 {
+    text-align: end;
 }

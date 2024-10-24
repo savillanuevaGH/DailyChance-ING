@@ -1,6 +1,26 @@
 // Generate today's numbers on page load
 window.onload = function () {
-  generateTodayNumbers();
+  if (!localStorage.getItem("numbers")) {
+    generateTodayNumbers();
+  } else {
+    const numbers = localStorage.getItem("numbers");
+    const numbersS = numbers.split(',');
+    const grid = document.getElementById("todayNumbers");
+
+    grid.innerHTML = "";
+
+    numbersS.forEach((num) => {
+      const circle = document.createElement("div");
+      circle.className = "number-circle number-animation";
+      if (num <= 9) {
+        circle.textContent = num;
+      } else {
+        circle.textContent = num;
+      }
+      winNumbers.push(circle.textContent);
+      grid.appendChild(circle);
+    });
+  }
 };
 const winNumbers = [];
 const myWinNumbers = [];
@@ -65,11 +85,13 @@ function checkWin() {
   if (coincidence.length === 3) {
     message.textContent = '¡Felicidades, has ganado!';
     message.style.color = 'green';
+    message.style.fontWeight = 'bold';
     document.body.appendChild(message);
     console.log("Ganaste");
   } else {
     message.textContent = 'Intentalo de nuevo mañana';
     message.style.color = 'red';
+    message.style.fontWeight = 'bold';
     document.body.appendChild(message);
     console.log("Perdiste");
   }
@@ -117,6 +139,7 @@ if (verificarIntento()) {
   generateMyNumbersBtn.style.display = "none";
   message.textContent = 'Intentalo de nuevo mañana';
   message.style.color = 'red';
+  message.style.fontWeight = 'bold';
   document.body.appendChild(message);
 
   // Convertir el string a un array

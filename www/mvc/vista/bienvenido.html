@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio sesion</title>
+    <link rel="shortcut icon" href="../vista/source/daily_chance_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/bienvenido.css">
 </head>
 <body>
@@ -14,10 +15,10 @@
                 <h1>Bienvenido</h1>
                 <p class="subtitle">Inicia sesión</p>
                 <div class="input-group">
-                    <input id="user-email" type="email" placeholder="example@gmail.com" required>
+                    <input id="user-email" type="email" placeholder="Correo Electrónico" required>
                     <input id="user-psswrd" type="password" placeholder="Contraseña" required>
                 </div>
-                <button onclick="logIn()">Iniciar Sesión</button>
+                <button form="loginForm" type="submit" onclick="logIn()">Iniciar Sesión</button>
                 <p class="toggle-form">¿No tienes cuenta? <span onclick="toggleForms()">Registrate</span></p>
             </div>
     
@@ -26,11 +27,11 @@
                 <h1>Registrate</h1>
                 <p class="subtitle">Hola, unite a nosotros</p>
                 <div class="input-group">
-                    <input type="email" placeholder="example@gmail.com" required>
-                    <input type="password" placeholder="Contraseña" required>
-                    <input type="password" placeholder="Repetir contraseña" required>
+                    <input id="email" type="email" placeholder="Correo Electrónico" required>
+                    <input id="contrasena" type="password" placeholder="Contraseña" required>
+                    <input id="confirmarContrasena" type="password" placeholder="Repetir contraseña" required>
                 </div>
-                <button onclick="register()">Registrate</button>
+                <button form="registerForm" type="submit" onclick="registeR()">Registrate</button>
                 <p class="toggle-form">¿Ya tienes cuenta?<br> <span onclick="toggleForms()">Iniciar sesión</span></p>
             </div>
         </div>

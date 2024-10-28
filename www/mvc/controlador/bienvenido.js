@@ -22,7 +22,7 @@ function logIn() {
     const userPassword = document.querySelector('#user-psswrd').value;
 
     login(userEmail, userPassword);
-    console.log('pedilo');
+    console.log('Contraseña Incorrecta');
     console.log(userEmail);
     console.log(userPassword);
 }
@@ -46,35 +46,48 @@ function login(usuario, contraseña) {
   }
 }
 
-function register(correo, contraseña, confirmarContraseña) {
+function registeR() {
+  const email = document.querySelector('#email').value;
+  const contrasena = document.querySelector('#contrasena').value;
+  const confirmarContrasena = document.querySelector('#confirmarContrasena').value;
+
+   // Validar que los campos no estén vacíos
+   if ( !email || !contrasena || !confirmarContrasena) {
+    return { mensaje: "Por favor, complete todos los campos" };
+  } else {
+    
+    register(email, contrasena, confirmarContrasena);
+    console.log('Contraseña Incorrecta');
+    console.log(email);
+    console.log(contrasena);
+
+  }
+
+}
+
+function register(email, contrasena, confirmarContrasena) {
   const usuarios = [
     {
-      nombre: "admin",
-      apellido: "admin",
       correo: "admin@example.com",
       contraseña: "admin123",
     },
     {
-      nombre: "usuario1",
-      apellido: "usuario1",
       correo: "usuario1@example.com",
       contraseña: "usuario123",
     },
     {
-      nombre: "usuario2",
-      apellido: "usuario2",
       correo: "usuario2@example.com",
       contraseña: "usuario456",
     },
   ];
 
   // Validar que los campos no estén vacíos
-  if (!nombre || !apellido || !correo || !contraseña || !confirmarContraseña) {
-    return { mensaje: "Por favor, complete todos los campos" };
+  if ( !email || !contrasena || !confirmarContrasena) {
+    return { mensaje: "Por favor, complete todos los campos"};
   }
 
   // Validar que la contraseña y la confirmación de contraseña sean iguales
-  if (contraseña !== confirmarContraseña) {
+  if (contrasena !== confirmarContrasena) {
     return {
       mensaje: "La contraseña y la confirmación de contraseña no coinciden",
     };
@@ -82,28 +95,27 @@ function register(correo, contraseña, confirmarContraseña) {
 
   // Validar que el correo electrónico sea válido
   const correoValido = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-    correo
+    email
   );
   if (!correoValido) {
     return { mensaje: "El correo electrónico no es válido" };
   }
 
   // Buscar si el correo electrónico ya existe en la base de datos
-  const usuarioExistente = usuarios.find((u) => u.correo === correo);
+  const usuarioExistente = usuarios.find((u) => u.email === email);
   if (usuarioExistente) {
     return { mensaje: "El correo electrónico ya existe en la base de datos" };
   }
 
   // Crear un nuevo usuario
   const nuevoUsuario = {
-    nombre,
-    apellido,
-    correo,
-    contraseña,
+    email,
+    contrasena,
   };
 
   // Agregar el nuevo usuario a la base de datos
   usuarios.push(nuevoUsuario);
+  window.location.href = "./index.html"
 
   return { mensaje: "Registro exitoso", usuario: nuevoUsuario };
 }
